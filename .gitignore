@@ -33,3 +33,6 @@
 
 # VSCode settings
 .vscode/
+
+# .swp files
+*.swp
