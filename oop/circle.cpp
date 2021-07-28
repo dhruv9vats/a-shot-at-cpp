@@ -4,18 +4,23 @@
 
 class LineSegment {
 public:
-	float length{};
 	LineSegment(float len) : length(len) {}
+	float GetLength() const { return length; }
+private:	
+	float length{};
 };
 
 class Circle {
 public:
+	Circle(float r) : radius(r) { area = radius.GetLength() * radius.GetLength() * PI; }
+	float GetRadius() const { return radius.GetLength(); }
+	float GetArea() const { return area; }
+private:
 	LineSegment radius;
 	float area{};
-	Circle(float r) : radius(r) { area = radius.length * radius.length * PI; }
 };
 
 int main() {
 	Circle circle{7.2};
-	std::cout << "The area of a circle with radius " << circle.radius.length << " units is " << circle.area << " units squared\n";
+	std::cout << "The area of a circle with radius " << circle.GetRadius() << " units is " << circle.GetArea() << " units squared\n";
 }
